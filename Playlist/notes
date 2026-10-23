@@ -1,0 +1,54 @@
+• Synchronous (Sync): Tasks are performed one after the other. The system must wait for the current action to finish completely before it can move on to the next.
+• Asynchronous (Async): Tasks can run independently and at the same time. The system can start a long-running process and immediately jump to other tasks while waiting for that process to finish in the background.
+
+
+Chrome	Blink (Chromium): Google Chrome is built on the open-source Chromium project, which uses the Blink rendering engine.
+Edge	Blink (Chromium): Microsoft Edge moved to the Chromium codebase in 2020 and also uses the Blink engine.
+Firefox	Gecko	Firefox : does not use an engine named "firefox"; its rendering engine is called Gecko (with its layout engine components called Quantum).
+Safari	WebKit	Apple   : Safari uses WebKit, which is the original engine that Blink was later branched from.
+
+headless execution : no UI visibility  pytest\filepath\-s -v --headless
+headed execution : UI visibility pytest\filepath\-s -v --headed
+specific test case execution: pytest Playlist/test.py::test_verifyTitalOfPage -s -v --headed
+
+headless execution : no UI visibility  pytest\filepath\-s -v --headless
+headed execution : UI visibility pytest\filepath\-s -v --headed
+specific test case execution: pytest Playlist/test.py::test_verifyTitalOfPage -s -v --headed
+parallel  execution : pytest\filepath\-s -v --headed --numprocesses 2
+
+locators
+These are the recommended built-in locators.
+
+page.getByRole()        : to locate by explicit and implicit accessibility attributes.
+page.getByText()        : to locate by text content.
+page.getByLabel()       : to locate a form control by associated label's text.
+page.getByPlaceholder() : to locate an input by placeholder.
+page.getByAltText()     : to locate an element, usually image, by its text alternative.
+page.getByTitle()       : to locate an element by its title attribute.
+page.getByTestId()      : to locate an element based on its data-testid attribute (other attributes can be configured).
+
+
+css selectors
+tag id combination      tag#id
+tag class               tag.class
+tag attribute           tag[attribute = value]
+tag class attribute     tag.class[attribute = value]
+absolute css selectors  eg html>header>body
+relative css selectors  eg html>header>body>div>div>p[id=para1] / html>header>body>div>div>p[id=para1][value="search"]
+indexing                body>div>*:nth-child(2)/body>div>*:first-child/body>div>*:last-child
+
+
+Absolute XPath
+
+• Starts from the root node using a single forward slash (/).
+• Traces the complete path down through the Document Object Model (DOM) tree.
+• Example from image: /html/body/div[4]/div[1]/div[1]/div[1]/a/img
+
+Relative XPath
+
+• Starts from anywhere within the DOM tree using a double forward slash (//).
+• Creates shorter paths by jumping directly to a specific element using attributes.
+• Example format: //div[@id="header"]//img
+
+
+
